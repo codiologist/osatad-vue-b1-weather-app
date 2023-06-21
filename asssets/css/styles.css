@@ -44,35 +44,32 @@ a {
 /*****************************************
     Background Colors 
 ******************************************/
-.sunny {
-	background: #56ccf2; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #2f80ed, #56ccf2); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #2f80ed, #56ccf2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
 .wrapper {
 	position: relative;
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background: #56ccf2; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #2f80ed, #56ccf2); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #2f80ed, #56ccf2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.search-location{
+.search-location {
 	position: relative;
 }
 
-.search-location .form-control{
+.search-location .form-control {
 	border-radius: 7px !important;
 	padding-left: 35px;
 }
 
-.search-location .form-control:focus{
+.search-location .form-control:focus {
 	box-shadow: none;
 	border: none;
 }
 
-.search-location i{
+.search-location i {
 	position: absolute;
 	top: 7px;
 	left: 5px;
@@ -82,7 +79,7 @@ a {
 	color: #000;
 }
 
-.search-location .btn{
+.search-location .btn {
 	position: absolute;
 	top: 0;
 	right: 10px;
@@ -94,25 +91,22 @@ a {
 	color: #000;
 }
 
-.search-location .btn:ho
-
-.search-location .btn:disabled{
-	opacity: .3;
+.search-location .btn:ho .search-location .btn:disabled {
+	opacity: 0.3;
 }
 
-.search-location .btn i{}
+.search-location .btn i {
+}
 
-
-.location-not-found{
+.location-not-found {
 	text-align: center;
 	display: none;
 }
 
-.location-not-found img{
+.location-not-found img {
 	width: 220px;
 	margin: 30px auto;
 }
-
 
 .weather-card {
 	position: relative;
@@ -124,9 +118,9 @@ a {
 	padding: 20px;
 }
 
-.weather-card::before{
+.weather-card::before {
 	position: absolute;
-	content: '';
+	content: "";
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -135,7 +129,6 @@ a {
 	backdrop-filter: blur(3.5px);
 	-webkit-backdrop-filter: blur(3.5px);
 	border-radius: 10px;
-
 }
 
 .weather-card .weather-card-body {
@@ -144,11 +137,21 @@ a {
 
 .weather-card .weather-card-body .location-name {
 	margin: 30px 0;
+	text-align: center;
 }
 
 .weather-card .weather-card-body .location-name h2 {
 	font-size: 40px;
 	text-align: center;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.weather-card .weather-card-body .location-name h4 {
+	font-size: 25px;
+	text-align: center;
+	margin-top: 10px;
 	margin-bottom: 0;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -182,9 +185,6 @@ a {
 	margin-bottom: 20px;
 }
 
-.weather-card .weather-card-body .temperature-status .temperature .temp-current {
-}
-
 .weather-card .weather-card-body .temperature-status .other-status {
 	display: flex;
 	flex-flow: row;
@@ -198,19 +198,13 @@ a {
 	font-size: 30px;
 }
 
-.rain-bg {
-	background: url(../images/rain-bg.png);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	color: #fff !important;
+.wrapper.sunny {
+	background: #f2994a; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #f2c94c, #f2994a); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #f2c94c, #f2994a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.rain-bg::before{
-	display: none;
-}
-
-.sunny-bg {
+.wrapper.sunny .weather-card {
 	background: url(../images/sunny-bg.jpg);
 	background-size: cover;
 	background-position: center;
@@ -218,8 +212,32 @@ a {
 	color: #000 !important;
 }
 
+.wrapper.raining {
+	background: #1e3c72;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-.cloud-bg {
+}
+
+.wrapper.raining .weather-card {
+	background: url(../images/rain-bg.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: #fff !important;
+}
+
+.wrapper.raining .weather-card::before {
+	display: none;
+}
+
+.wrapper.cloudy {
+	background: #485563; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #29323c, #485563); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.wrapper.cloudy .weather-card {
 	background: url(../images/cloud-bg.jpg);
 	background-size: cover;
 	background-position: center;
@@ -227,11 +245,17 @@ a {
 	color: #fff !important;
 }
 
-.cloud-bg::before{
+.wrapper.cloudy .weather-card::before {
 	display: none;
 }
 
-.haze-bg {
+.wrapper.haze {
+	background: #9cecfb; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #0052d4, #65c7f7, #9cecfb); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #0052d4, #65c7f7, #9cecfb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.wrapper.haze .weather-card {
 	background: url(../images/haze-bg.png);
 	background-size: cover;
 	background-position: center;
@@ -239,18 +263,20 @@ a {
 	color: #fff !important;
 }
 
-.haze-bg::before{
+.wrapper.haze .weather-card::before {
 	display: none;
 }
 
-.snow-bg {
-	background: url(../images/snow-bg.png);
+.wrapper.snow {
+	background: #b993d6; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #8ca6db, #b993d6); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #8ca6db, #b993d6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.wrapper.snow .weather-card {
+	background: url(../images/snow-bg.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	color: #000 !important;
-}
-
-.haze-bg::before{
-	display: none;
 }
