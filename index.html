@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather App</title>
+        <link rel="stylesheet" href="asssets/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="asssets/css/styles.css">
+    </head>
+
+    <body>
+        <!-- Start Wrapper -->
+        <div class="wrapper sunny">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 offset-sm-3">
+                        <div class="weather-card">
+
+                            <div class="search-location">
+                                <i class='bx bxs-map'></i>
+                                <input type="text" id="searchLocationInput" class="form-control" placeholder="Type Location Here...." aria-label="Location" value="">
+                                <button type="button" id="getWeatherStatusBtn" class="btn" disabled>
+                                    <i class='bx bx-search'></i>
+                                </button>
+                            </div>
+
+                            <div class="location-not-found">
+                                <img src="./asssets/images/icons/not-found.png" alt="Not Found Iobc">
+                                <h2>Locaion not Found</h2>
+                                <p>Please check the spelling.</p>
+                            </div>
+
+                            <div class="weather-card-body">
+                                <div class="location-name">
+                                    <h2>Gazipur</h2>
+                                </div>
+                                <div class="temperature-status">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="text-center">
+                                            <div class="weather-icon">
+                                                <img src="asssets/images/icons/sunny.svg" alt="Icon">
+                                            </div>
+                                            <h4 class="desc"></h4>
+                                        </div>
+                                        <div>
+                                            <div class="temperature">
+                                                <h2 class="temp-current"><span>34</span><sup>&deg;C</sup></h2>
+                                                <div class="d-flex">
+                                                    <p class="temp-max me-3">Max <span>42</span><sup>&deg;C</sup></p>
+                                                    <p class="temp-min">Min <span>28</span> <sup>&deg;C</sup></p>
+                                                </div>
+                                                <p class="feels-like mt-2">Feels Like <span>38</span><sup>&deg;C</sup></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="other-status">
+                                        <div class="humidity">
+                                            <i class="bx bxs-droplet"></i>
+                                            <p>Humidty: <span></span>%</p>
+                                        </div>
+                                        <div class="wind-speed">
+                                            <i class="bx bx-wind"></i>
+                                            <p>Wind: <span></span> km/h</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- / End Wrapper -->
+
+        <script type="text/javascript" src="asssets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="asssets/js/popper.min.js"></script>
+        <script type="text/javascript" src="asssets/js/script.js"></script>
+    </body>
+
+</html>
